@@ -14,6 +14,7 @@ var app = express();
 hotplate.setApp( app );
 
 // Register two Hotplate modules
+hotplate.registerModule( 'module1', require('module2') );
 hotplate.registerModule( 'module1', require('module1') );
 
 // Initialise the modules. Once done, continue with node's usual rock&roll
