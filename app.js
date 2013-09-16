@@ -13,7 +13,7 @@ var app = express();
 // Associate "app" to hotplate
 hotplate.setApp( app );
 
-// Register two Hotplate modules
+// Register a Hotplate modules
 hotplate.registerModule( 'module1', require('module1') );
 
 // Initialise the modules. Once done, continue with node's usual rock&roll
