@@ -14,7 +14,8 @@ var app = express();
 hotplate.setApp( app );
 
 // Register two Hotplate modules
-hotplate.registerModule( 'module1', require('module2') );
+hotplate.registerModule( 'module3', require('module3') );
+hotplate.registerModule( 'module2', require('module2') );
 hotplate.registerModule( 'module1', require('module1') );
 
 // Initialise the modules. Once done, continue with node's usual rock&roll
@@ -22,14 +23,10 @@ hotplate.initModules( function() {
 
   // all environments
   app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
 
   // development only
   if ('development' == app.get('env')) {
